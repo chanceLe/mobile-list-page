@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>文章推荐</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="stylesheet" href="./lib/css/light7.min.css">
+		<link rel="stylesheet" href="./lib/css/index.css">
+	</head>
+	<body>
+		<div class="page">
+
+			<header class="bar bar-nav">
+				<a class="button button-link button-nav pull-left" href="http://www.baidu.com" >
+					<!--头部左侧 图片   1:1 -->
+					<img class="headimg" src="./lib/imgs/1.jpg" alt="" />
+				</a>
+				<h1 class="title">今日推荐</h1>
+
+				<a class="button button-link button-nav pull-right" href="http://www.baidu.com" >
+					
+					<!--头部右侧图片  1:1  -->
+					<img class="headimg" src="./lib/imgs/2.jpg" alt="" />
+				</a>
+			</header>
+				<div class="content infinite-scroll pull-to-refresh-content" data-distance="100">
+					<div class="pull-to-refresh-layer">
+				    <div class="preloader"></div>
+				    <div class="pull-to-refresh-arrow"></div>
+				  </div>
+				    <div class="list-block">
+				    	
+				    	<!--默认这个列表为空,这里的数据都是后加上的   下面的三个只作为模板 -->
+				        <ul class="list-container">
+				        	
+				 
+				        	<!--左侧标题  右侧图片   比例   120/75 = 1.6  -->
+				        	<!-- 图片比例可以稍微有差距   但同一组数据的必须一致  -->
+				        	
+							<li class="item1">
+								<a href="http://www.sina.com.cn" class="clearfix">
+									<div class="left">
+										<div class="articletitle">
+											相爱过得人啊,我们为什么而分手？
+										</div>
+										<div class="keywords">
+											<span class="tag tag-tuijian">更新</span>
+											<span class="key">农民</span>
+										</div>
+									</div>
+									<div class="right">
+										<img class="lazy" data-original="./lib/imgs/01.jpg" alt="" />
+									</div>
+								</a>
+							</li>
+
+							<!--标题 + 1大图     图片比例   580/247 = 2.348  -->
+							<li class="item2">
+								<!--href 是跳转链接-->
+								<a href="http://www.baidu.com" class="clearfix">
+									
+									<!-- class= atrticletitle  标题-->
+									<div class="articletitle">
+										相爱过得人啊,我们为什么而分手？
+									</div>
+									<div class="imgbox">
+										<!--图片路径-->
+										<img class="lazy" data-original="./lib/imgs/02.jpg" alt="" />
+									</div>
+									
+									
+									<!--关键字-->
+									<div class="keywords">
+										<!-- tag类表明 是有背景颜色的标签    -->
+										<!--
+											tag-*设置具体颜色，现支持下面五种
+											
+											不同背景色的标签  如下 
+											tag-refresh
+											tag-tuijian
+											tag-hot
+											tag-lijian
+											tag-shoufa
+										-->
+										<span class="tag tag-refresh">更新</span>
+										<span class="key">花都</span>
+									</div>
+
+								</a>
+							</li>
+
+							<!--标题 + 3小图 -->
+							<!--这三个图的比例     120/75 = 1.6 -->
+						
+							<li class="item3">
+								<!--跳转链接-->
+								<a href="http://www.sina.com.cn" class="clearfix">
+									<div class="articletitle">
+										相爱过得人啊,我们为什么而分手？
+									</div>
+									<div class="imglist">
+										<strong>
+											
+										<img class="lazy" data-original="./lib/imgs/04.jpg" alt="" />
+									</strong>
+										<strong>
+										<img class="lazy" data-original="./lib/imgs/05.jpg" alt="" />
+									</strong>
+										<strong>
+										<img class="lazy" data-original="./lib/imgs/06.jpg" alt="" />
+									</strong>
+									</div>
+
+									<div class="keywords">
+										<span class="tag tag-hot">更新</span>
+										<span class="key">总裁</span>
+									</div>
+								</a>
+							</li>
+				        </ul>
+				    </div>
+				    <!-- preloader -->
+				    <div class="infinite-scroll-preloader">
+				        <div class="preloader"></div>
+				    </div>
+				</div>
+			</div>
+		</div>
+		<!--[if lt IE 9]>
+		    <script src="html5shiv.js"></script>
+		<![endif]-->
+		<script type='text/javascript' src='./lib/js/jquery-3.2.1.min.js' charset='utf-8'></script>
+		<script type='text/javascript' src='./lib/js/light7.min.js' charset='utf-8'></script>
+		<script type='text/javascript' src='./lib/js/jquery.lazyload.js' charset='utf-8'></script>	
+		<script>
+			
+		$(document).ready(function(){
+		      $("img.lazy").lazyload({effect: "fadeIn",container:".content"});
+		  });
+		  
+		  
+		  
+	var loading = false;
+	
+	
+	//最大数据条数
+    var maxItems = 60;
+	
+	//首屏加载数据
+    var itemsPerLoad = 10;
+
+    function addItems(number, lastIndex) {
+            var html = '';
+            for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+                html += '<li class="item3"><a href="http://www.baidu.com" class="clearfix"><div class="articletitle">相爱过得人啊,我们为什么而分手？</div><div class="imglist"><strong><img class="lazy" data-original="./lib/imgs/04.jpg" alt="" /></strong><strong><img class="lazy" data-original="./lib/imgs/06.jpg" alt="" /></strong><strong><img class="lazy" data-original="./lib/imgs/06.jpg" alt="" /></strong></div><div class="keywords"><span class="tag tag-hot">更新</span><span class="key">总裁</span></div></a></li>';
+            }
+            $('.list-container').append(html);
+             $("img.lazy").lazyload({effect: "fadeIn",container:".content"});
+        }
+    addItems(itemsPerLoad, 0);
+
+	
+	//每次加载多少条数据
+    var lastIndex = 10;
+
+    $(document).on('infinite', '.infinite-scroll',function() {
+
+        // 如果正在加载，则退出
+        if (loading) return;
+
+        // 设置flag
+        loading = true;
+
+        setTimeout(function() {
+            loading = false;
+            
+            //停止滚动加载
+            if (lastIndex >= maxItems) {
+                $.detachInfiniteScroll($('.infinite-scroll'));
+                $('.infinite-scroll-preloader').remove();
+                return;
+            }
+            addItems(itemsPerLoad, lastIndex);
+            lastIndex = $('.list-container li').length;
+        }, 1000);
+    });
+		
+			
+		//下拉刷新 
+		
+		//在setTimeout里发送ajax请求数据。按照三个模板填充，再添加数据
+		$(document).on('refresh', '.pull-to-refresh-content',function(e) {
+		   	 setTimeout(function() {
+		        var cardHTML = '<li class="item3"><a href="http://www.baidu.com" class="clearfix"><div class="articletitle">文章标题文章标题文章标题文章标题文章标题文章标题文章标题？</div><div class="imglist"><strong><img class="lazy" data-original="./lib/imgs/04.jpg" alt="" /></strong><strong><img class="lazy" data-original="./lib/imgs/05.jpg" alt="" /></strong><strong><img class="lazy" data-original="./lib/imgs/06.jpg" alt="" /></strong></div><div class="keywords"><span class="tag tag-hot">更新</span><span class="key">总裁</span></div></a></li>';
+		        $(".list-container").prepend(cardHTML);
+		      $("img.lazy").lazyload({effect: "fadeIn",container:".content"});
+		        // done
+		        $.pullToRefreshDone('.pull-to-refresh-content');
+		    }, 1000);
+		});
+		
+		$.init();
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,170 @@
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+	display: block;
+}
+
+.page {
+	background-color: #FFF;
+}
+
+.headimg {
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-top: 0.35rem;
+}
+
+.list-block{
+	margin: 0;
+}
+
+ ul.list-container {
+	margin: -1px .5rem 0;
+	height: 100%;
+	border:none;
+}
+
+ ul.list-container li {
+	border-bottom: 1px solid #dedede;
+	
+}
+ ul.list-container li:first-child {
+ 	border-top: 1px solid #dedede;
+ }
+
+ .list-container li>a {
+	display: block;
+	color: #3D4145;
+	padding: .75rem 0;
+	position: relative;
+}
+
+.item1 .left {
+	float: left;
+	width: 66%;
+	height: auto;
+	height: 100%;
+	padding-right: 10px;
+}
+
+.item1 .right {
+	float: right;
+	width: 34%;
+	min-height: 65px;
+}
+
+.item1 .right img {
+	width: 100%;
+	display: block;
+}
+
+.list-container li .tag {
+	font-size: .5rem;
+}
+
+.articletitle {
+	height: 2.2rem;
+	font-size: .8rem;
+	margin-bottom: .2rem;
+	font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+	font-weight: normal;
+}
+
+.item1 .articletitle {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.item2 .articletitle ,.item3 .articletitle{
+	height: 1.5rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.item2 .imgbox {
+	width: 100%;
+	margin-bottom: 3px;
+}
+
+.item2 .imgbox img,.item3 .imglist strong img{
+	display: block;
+	width: 100%;
+}
+
+/*标签背景色-start*/
+
+/*更新*/
+.tag-refresh {
+	background-color: #33b7ee;
+	
+}
+
+/*推荐*/
+.tag-tuijian{
+	background-color: #706ec5;
+}
+
+/*火热*/
+.tag-hot{
+	background-color: #ee3333;
+}
+
+/*力荐*/
+.tag-lijian{
+	background-color: #ff9920;
+}
+
+/*首发*/
+.tag-shoufa{
+	background-color:#a047df;
+}
+
+/*标签背景色-end*/
+
+
+.tag{
+	padding: 1px 4px 1px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 3px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	color: #FFF;
+}
+.keywords .key{
+	font-size: 0.5rem;
+	    color: #6a7a8a;
+}
+
+.imglist{
+	overflow: hidden;
+	margin: 0 0 10px -1.5%;
+	zoom: 1;
+}
+.imglist strong{
+	display: block;
+	width: 33.33333%;
+	float: left;
+	min-height: 62px;
+	padding: 0 0 0 1.5%;
+	box-sizing: border-box!important;
+	zoom: 1;
+	overflow: hidden;
+}
+.clearfix:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+}
+
+.clearfix {
+	zoom: 1;
+}
